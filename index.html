@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meganath K M | Portfolio</title>
+
+    <meta name="description"
+          content="Personal portfolio of Meganath K M - MCA Student, Programmer and Creative Learner">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 45px;
+            color: #111827;
+        }
+
+        .section-title span {
+            color: #2563eb;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+            color: #4b5563;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .skill-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #4b5563;
+        }
+
+        /* PROJECTS */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        /* EDUCATION / EXPERIENCE */
+
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .timeline-item h3 {
+            color: #111827;
+        }
+
+        .timeline-item .date {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .cert-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">Meganath K M</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Internship</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm Meganath K M</h1>
+
+        <h2>MCA Student | Programmer | Creative Learner</h2>
+
+        <p>
+            Motivated and detail-oriented MCA student with a strong foundation
+            in computer science, programming and data-driven applications.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About <span>Me</span></h2>
+
+    <div class="about">
+
+        <p>
+            Motivated and detail-oriented MCA student with a strong foundation
+            in computer science and programming.
+        </p>
+
+        <br>
+
+        <p>
+            Passionate about developing innovative solutions and eager to apply
+            technical skills in a challenging environment. A quick learner with
+            strong problem-solving abilities and a keen interest in software
+            development and data-driven applications.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">My <span>Skills</span></h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>React JS and web-based application development.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Python Programming</h3>
+            <p>Python programming and machine learning fundamentals.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>SQL / Database</h3>
+            <p>SQL, MySQL and database management.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>MS Excel</h3>
+            <p>Basic spreadsheet handling and data management.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Adobe Photoshop</h3>
+            <p>Basic image editing and creative design.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Adobe Premiere Pro</h3>
+            <p>Basic video editing and video manipulation.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <p>
+                Team Work • Creative Thinking • Problem Solving
+                • Quick Learning Ability
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Languages</h3>
+            <p>
+                Tamil - Native<br>
+                English - Intermediate
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="projects-container">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <h3>Smart Heart Disease Detection System</h3>
+
+            <p>
+                Developed a machine learning-based web application that
+                predicts the possibility of heart disease using patient
+                health parameters such as age, blood pressure, cholesterol,
+                chest pain type, ECG results and heart rate.
+            </p>
+
+            <p>
+                Implemented a Random Forest classification model with
+                data preprocessing and an interactive Streamlit interface
+                for entering patient details and viewing prediction results.
+            </p>
+
+            <p class="tech">
+                Tech Stack:
+                Python, Pandas, NumPy, Scikit-learn,
+                Random Forest, Streamlit
+            </p>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <h3>Agenda for the Defending Case on the Web Directory</h3>
+
+            <p>
+                Developed a web-based legal case management system designed
+                to organize and manage case-related information efficiently.
+            </p>
+
+            <p>
+                Implemented features such as case tracking, scheduling,
+                document management and search functionality with an
+                intuitive user interface.
+            </p>
+
+            <p class="tech">
+                Tech Stack:
+                React JS, MySQL
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">My <span>Education</span></h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="date">2025 - 2027</div>
+
+            <h3>Master of Computer Applications (MCA) - Pursuing</h3>
+
+            <p>
+                Dr. G. R. Damodaran College of Science (Autonomous),
+                Bharathiar University, Coimbatore
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2022 - 2025</div>
+
+            <h3>B.Sc Computer Science</h3>
+
+            <p>
+                Hindusthan College of Arts & Science, Coimbatore
+            </p>
+
+            <p>
+                CGPA: 6.5
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2022</div>
+
+            <h3>Higher Secondary Education</h3>
+
+            <p>
+                Bharathi Matric Hr. Sec. School, Erode
+            </p>
+
+            <p>
+                Percentage: 67%
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERNSHIP -->
+
+<section id="experience">
+
+    <h2 class="section-title">Internship & <span>Workshops</span></h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>SIRENA TECHNOLOGIES</h3>
+
+            <div class="date">
+                Artificial Intelligence & Robotics Intern
+            </div>
+
+            <p>
+                Gained hands-on experience in robotics technology and
+                practical knowledge of the functionalities and applications
+                of advanced robotic systems developed by the company.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>MAAC - Institutional Training Programme</h3>
+
+            <div class="date">
+                Adobe Premiere Pro | Coimbatore
+            </div>
+
+            <p>
+                Gained basic knowledge of Adobe Premiere Pro for video editing,
+                including photo and video manipulation techniques.
+                Developed an understanding of fundamental editing principles
+                and workflow management.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2 class="section-title">Achievements & <span>Certifications</span></h2>
+
+    <div class="certifications">
+
+        <div class="cert-card">
+            <h3>IBM Course Certifications</h3>
+            <p>Data Visualisation</p>
+            <p>Design Thinking</p>
+        </div>
+
+        <div class="cert-card">
+            <h3>Oracle Academy</h3>
+            <p>SQL Workshop</p>
+        </div>
+
+        <div class="cert-card">
+            <h3>Cisco Networking Academy</h3>
+            <p>Introduction to Data Science</p>
+            <p>Completed: February 2026</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact <span>Me</span></h2>
+
+    <div class="contact-box">
+
+        <p>
+            📞
+            <strong>Phone:</strong>
+            <a href="tel:+919659425633">
+                +91 9659425633
+            </a>
+        </p>
+
+        <p>
+            📧
+            <strong>Email:</strong>
+            <a href="mailto:Meganathmoorthy@gmail.com">
+                Meganathmoorthy@gmail.com
+            </a>
+        </p>
+
+        <p>
+            🔗
+            <strong>LinkedIn:</strong>
+            <a
+                href="https://www.linkedin.com/in/meganath-km-850350315"
+                target="_blank">
+                View LinkedIn Profile
+            </a>
+        </p>
+
+        <br>
+
+        <a
+            href="mailto:Meganathmoorthy@gmail.com"
+            class="btn">
+            Email Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Meganath K M. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
